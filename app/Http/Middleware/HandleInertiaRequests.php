@@ -32,7 +32,13 @@ class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'auth' => [
-                'user' => $request->user(),
+                'user' => function () use ($request) {
+                    if ($request->user()) {
+                        return array_merge($request->user()->toArray(), [
+                            'roles' => $request->user()->getRoleNames(), // Récupère les noms de rôles
+                        ]);
+                    }
+                },
             ],
         ];
     }
