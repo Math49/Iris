@@ -10,9 +10,30 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class ProfileController extends Controller
 {
+
+    public function index()
+    {
+        $users = User::with('roles')->get();
+        $roles = Role::all();
+
+        return Inertia::render('EditUsers', [
+            'users' => $users,
+            'roles' => $roles,
+        ]);
+    }
+
+    public function updateRole(Request $request, User $user)
+    {
+        
+        $request->validate(['role' => 'required|exists:roles,name']);
+        $user->syncRoles($request->role);
+        return response()->json(['message' => 'Le rôle a été mis à jour avec succès.']);
+    }
     /**
      * Display the user's profile form.
      */
