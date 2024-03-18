@@ -14,15 +14,18 @@ export default function Authenticated({ user, header, children }) {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
-                            <div className="shrink-0 flex items-center">
-                                <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
-                                </Link>
-                            </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div className="hidden space-x-8 sm:-my-px sm:flex">
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                    Dashboard
+                                    Gestion du blog
+                                </NavLink>
+                                <NavLink href={route('dashboard')} active={route().current('forum')}>
+                                    Gestion du forum
+                                </NavLink>
+                                <NavLink href={route('dashboard')} active={route().current('users')}>
+                                    Gestion des témoignages
+                                </NavLink>
+                                <NavLink href={route('dashboard')} active={route().current('users')}>
+                                    Gestion des utilisateurs
                                 </NavLink>
                             </div>
                         </div>
