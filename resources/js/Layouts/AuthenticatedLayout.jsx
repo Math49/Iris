@@ -15,7 +15,7 @@ export default function Authenticated({ user, header, children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="hidden space-x-8 sm:-my-px sm:flex">
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink href={route('posts.index')} active={route().current('posts.index')}>
                                     Gestion du forum
                                 </NavLink>
                                 <NavLink href={route('dashboard')} active={route().current('blog')}>
@@ -27,9 +27,7 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('users.index')} active={route().current('users.index')}>
                                     Gestion des utilisateurs
                                 </NavLink>
-                                <NavLink href={route('posts.index')} active={route().current('posts.index')}>
-                                    Posts
-                                </NavLink>
+                                
                             </div>
                         </div>
 
