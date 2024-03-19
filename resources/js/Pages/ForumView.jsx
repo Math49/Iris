@@ -7,10 +7,10 @@ let categoriesFiltred = []
 
 export default function Forum({ auth, categories, posts, comments, users }) {
     
-
+    console.log(categories, posts, comments, users)
 
     useEffect(() => {
-        if (auth.user && auth.user.permissions && !auth.user.permissions.includes('forum access')) {
+        if (auth.user && auth.user.permissions && auth.user.permissions.includes('forum access')) {
             
             categoriesFiltred = categories.filter(category => !category.restricted)
         }else{
