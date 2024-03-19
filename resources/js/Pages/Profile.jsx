@@ -1,13 +1,13 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import DeleteUserForm from './Partials/DeleteUserForm';
-import UpdatePasswordForm from './Partials/UpdatePasswordForm';
-import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm';
+import Header from '@/Layouts/Header';
+import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm';
+import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm';
+import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm';
+import Header from '@/Layouts/Header';
 
-export default function Edit({ auth, mustVerifyEmail, status }) {
+export default function Profile({ auth, mustVerifyEmail, status}) {
     return (
-        <AuthenticatedLayout
-            user={auth.user}
-        >
+        <>
+            <Header auth={auth} />
             <div className="py-8">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                     <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
@@ -26,7 +26,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                         <DeleteUserForm className="max-w-xl" />
                     </div>
                 </div>
-            </div>
-        </AuthenticatedLayout>
+            </div>                           
+        </>
     );
 }
