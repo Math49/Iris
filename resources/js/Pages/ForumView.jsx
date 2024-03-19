@@ -3,22 +3,8 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Link, Head } from "@inertiajs/react";
 import axios from 'axios';
 import { Inertia } from '@inertiajs/inertia';
-let categoriesFiltred = []
 
 export default function Forum({ auth, categories, posts, comments, users }) {
-    
-    console.log(categories, posts, comments, users)
-
-    useEffect(() => {
-        if (auth.user && auth.user.permissions && auth.user.permissions.includes('forum access')) {
-            
-            categoriesFiltred = categories.filter(category => !category.restricted)
-        }else{
-            
-            categoriesFiltred = categories
-
-        }
-    }, []);
 
     const handleRoleChange = (e) => {
         e.preventDefault();
@@ -55,7 +41,7 @@ export default function Forum({ auth, categories, posts, comments, users }) {
                         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                             <div className="p-6 text-gray-900">
                                 <div>
-                                    {categoriesFiltred && categoriesFiltred.map(category => (
+                                    {categories && categories.map(category => (
                                         <div className='' key={category.id}>
                                             <h2 className='font-bold mb-4 '>{category.title}</h2>
                                             {posts && posts.filter(post => post.category_id === category.id).map(post => (
