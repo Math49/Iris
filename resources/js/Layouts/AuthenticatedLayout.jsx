@@ -14,18 +14,18 @@ export default function Authenticated({ user, header, children }) {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
-                            <div className="shrink-0 flex items-center">
-                                <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
-                                </Link>
-                            </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div className="hidden space-x-8 sm:-my-px sm:flex">
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                    Dashboard
+                                    Gestion du forum
+                                </NavLink>
+                                <NavLink href={route('dashboard')} active={route().current('blog')}>
+                                    Gestion du blog
+                                </NavLink>
+                                <NavLink href={route('dashboard')} active={route().current('témoignages')}>
+                                    Gestion des témoignages
                                 </NavLink>
                                 <NavLink href={route('users.index')} active={route().current('users.index')}>
-                                    Edit Users
+                                    Gestion des utilisateurs
                                 </NavLink>
                             </div>
                         </div>
@@ -37,9 +37,9 @@ export default function Authenticated({ user, header, children }) {
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                className="text-black flex items-center"
                                             >
-                                                {user.name}
+                                                Mon compte
 
                                                 <svg
                                                     className="ms-2 -me-0.5 h-4 w-4"
