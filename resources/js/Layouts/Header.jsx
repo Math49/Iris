@@ -72,7 +72,7 @@ export default function Header({ auth }) {
                 </ul>
                 <div>
                     <div className='bg-bleu text-white py-1 px-6 rounded-lg'>
-                        {auth.user ? (
+                        {auth.user.id ? (
                             <Dropdown>
                                 <Dropdown.Trigger>
                                     <span className="inline-flex rounded-md">
