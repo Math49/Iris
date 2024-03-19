@@ -6,7 +6,6 @@ import { Inertia } from '@inertiajs/inertia';
 
 export default function UserRoles({ auth, users, roles }) {
     
-
     const handleRoleChange = (userId, e) => {
         axios.post(route('users.updateRole', userId), {
             role: e.target.value

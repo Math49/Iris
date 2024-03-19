@@ -20,10 +20,12 @@ class RolePermissionSeeder extends Seeder
             'delete post',
             'publish post',
             'unpublish post',
+            'forum access',
         ];
 
         foreach ($permissions as $permission) {
-            Permission::create(['name' => $permission]);
+            // Vérifie si la permission existe déjà pour éviter les doublons
+            Permission::firstOrCreate(['name' => $permission, 'guard_name' => 'web']);
         }
 
         // Création des Rôles et assignation des Permissions
@@ -31,7 +33,7 @@ class RolePermissionSeeder extends Seeder
         $roleAdmin->givePermissionTo(Permission::all());
 
         $rolePro = Role::create(['name' => 'pro']);
-        $rolePro->givePermissionTo(['publish post', 'unpublish post']);
+        $rolePro->givePermissionTo(['publish post', 'unpublish post', 'forum access']);
 
         $roleUser = Role::create(['name' => 'user']);
         $roleUser->givePermissionTo(['edit post', 'delete post']);
