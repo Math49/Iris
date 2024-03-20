@@ -7,6 +7,7 @@ import Header from '@/Layouts/Header';
 
 export default function BlogView({auth, blogs, users}) {
 
+    console.log(auth.user.roles);
 
     return (
         <>
@@ -14,7 +15,10 @@ export default function BlogView({auth, blogs, users}) {
 
         <div className='flex flex-col items-center justify-center'>
 
-            <Link href={route("blog.add")}>Add Blog</Link>
+            {auth.user && auth.user.roles[0] === 'admin' && (
+                <Link href={route("blog.add")}>Add Blog</Link>
+            )}
+            
             
             <div className="container">
                 

@@ -16,6 +16,10 @@ Route::get('/', function () {
     ]);
 })->name('welcome');
 
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -33,10 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts', [ForumController::class, 'posts'])->name('posts.index');
     Route::delete('/posts/{id}', [ForumController::class, 'destroyPost'])->name('posts.destroy');
     
-    Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
     Route::get('/blog/create', [BlogController::class, 'addBlog'])->name('blog.add');
     Route::post('/blog/create', [BlogController::class, 'create'])->name('blog.create');
-    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
     Route::get('/dashboard/blog', [BlogController::class, 'dashboard'])->name('blog.dashboard');
     Route::delete('/dashboard/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
 

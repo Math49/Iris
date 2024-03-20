@@ -38,7 +38,7 @@ export default function Bandeau() {
 
     return (
         <div className="bg-bleu text-white h-7 text-sm overflow-hidden">
-            <div className='w-[120%] mt-[2px]' ref={wrapperRef}>
+            <div className='w-[130%] mt-[2px]' ref={wrapperRef}>
                 <span>Pour toute urgence, appeler le <span className="font-bold">3018</span>. Accompagne les jeunes, leur parents et les professionnels pour les problématiques du cyberharcèlement. Numéro gratuit et accessible 6 jours sur 7, de 9 heures à 20 heures, par téléphone, par tchat en direct, via Messenger et WhatsApp et sur <span className="font-bold">3018.fr</span>.</span>
             </div>                
         </div>

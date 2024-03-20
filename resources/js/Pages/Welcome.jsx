@@ -3,6 +3,12 @@ import image from '../../img/gem0701938-jpg-29468.jpg';
 import {Link} from '@inertiajs/react';
 import Footer from '@/Layouts/Footer';
 
+import Mascote1 from '../../img/Mascot1.png';
+import Mascote2 from '../../img/Mascot2.png';
+import Mascote3 from '../../img/Mascot3.png';
+import Mascote4 from '../../img/Mascot4.png';
+import Mascote5 from '../../img/Mascot5.png';
+
 export default function Welcome({ auth }) {
     return (
         <>
@@ -21,35 +27,45 @@ export default function Welcome({ auth }) {
                 <h2 className='uppercase text-center text-4xl font-semibold text-noir'>SE PROTÉGER CONTRE LE cyberharcèlement</h2>
                 <div className='flex justify-between px-20 mt-16'>
                     <div className='flex flex-col items-center w-[14rem]'>
-                        <div className='h-28 w-28 bg-bleu rounded-full'></div>
+                        <div className='h-27 w-27 rounded-full'>
+                            <img src={Mascote1} alt="" />
+                        </div>
                         <h3 className='text-bleu mt-2'>Le cyberharcèlement</h3>
                         <p className='w-full text-center mt-2 text-noir'>
                             Que dois-je faire façe à une situation de cyberharcèlement ? Trouvez ici nos conseils pour agir et vous protéger.
                         </p>
                     </div>
                     <div className='flex flex-col items-center w-[14rem]'>
-                        <div className='h-28 w-28 bg-bleu rounded-full'></div>
+                        <div className='h-27 w-27 rounded-full'>
+                            <img src={Mascote2} alt="" />
+                        </div>
                         <h3 className='text-bleu mt-2'>Les réseaux sociaux</h3>
                         <p className='w-full text-center mt-2 text-noir'>
                             Conseils et règles de sécurité pour protéger vos enfants des risques et dangers sur les réseaux sociaux. Risque et prévention.                        
                         </p>
                     </div>
                     <div className='flex flex-col items-center w-[14rem]'>
-                        <div className='h-28 w-28 bg-bleu rounded-full'></div>
+                        <div className='h-27 w-27 rounded-full'>
+                            <img src={Mascote3} alt="" />
+                        </div>
                         <h3 className='text-bleu mt-2'>Le contrôle parental</h3>
                         <p className='w-full text-center mt-2 text-noir'>
                             Nos ressources  vous aideront à installer le contrôle parental. Pourquoi utiliser des outils de contrôle parental ? Protégez-vous des contenus inappropriés                        
                         </p>
                     </div>
                     <div className='flex flex-col items-center w-[14rem]'>
-                        <div className='h-28 w-28 bg-bleu rounded-full'></div>
+                        <div className='h-27 w-27 rounded-full'>
+                            <img src={Mascote4} alt="" />
+                        </div>
                         <h3 className='text-bleu mt-2'>Jeux vidéos</h3>
                         <p className='w-full text-center mt-2 text-noir'>
                             Bien choisir les jeux vidéos pour son enfant. Trouvez des conseils pour choisir des jeux adaptés à votre enfant et des outils pour une pratique saine.                       
                         </p>
                     </div>
                     <div className='flex flex-col items-center w-[14rem]'>
-                        <div className='h-28 w-28 bg-bleu rounded-full'></div>
+                        <div className='h-27 w-27 rounded-full'>
+                            <img src={Mascote5} alt="" />
+                        </div>
                         <h3 className='text-bleu text-center mt-2'>Violation de données</h3>
                         <p className='w-full text-center mt-2 text-noir'>
                             Nos ressources pour traiter et se protéger contre les vols de données personnelles. Comprenez les risques et apprenez comment protéger votre vie privée en ligne.                       
