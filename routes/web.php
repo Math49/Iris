@@ -21,8 +21,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard/users', [ProfileController::class, 'index'])->name('users.index');
-    Route::post('/dashboard/users/{user}/role', [ProfileController::class, 'updateRole'])->name('users.updateRole');
+    Route::get('/admin/dashboard/users', [ProfileController::class, 'index'])->name('users.index');
+    Route::post('/admin/dashboard/users/{user}/role', [ProfileController::class, 'updateRole'])->name('users.updateRole');
 
     Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
     Route::get('/forum/{id}', [ForumController::class, 'showPost'])->name('forum.showPost');

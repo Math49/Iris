@@ -21,7 +21,7 @@ class ProfileController extends Controller
         $users = User::with('roles')->get();
         $roles = Role::all();
 
-        return Inertia::render('EditUsers', [
+        return Inertia::render('Admin/EditUsers', [
             'users' => $users,
             'roles' => $roles,
         ]);
