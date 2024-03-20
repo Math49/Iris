@@ -34,9 +34,7 @@ class ProfileController extends Controller
         $user->syncRoles($request->role);
         return response()->json(['message' => 'Le rôle a été mis à jour avec succès.']);
     }
-    /**
-     * Display the user's profile form.
-     */
+
     public function edit(Request $request): Response
     {
         return Inertia::render('Profile/Edit', [
