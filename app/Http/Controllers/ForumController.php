@@ -18,12 +18,14 @@ class ForumController extends Controller
         $posts = Post::all();
         $comments = Comment::all();
         $users = User::all();
+        $users_role = User::with('roles')->get();
 
         return Inertia::render('ForumView', [
             'categories' => $categories,
             'posts' => $posts,
             'comments' => $comments,
-            'users' => $users
+            'users' => $users,
+            'users_role' => $users_role
         ]);
     }
 
@@ -31,11 +33,15 @@ class ForumController extends Controller
         $post = Post::find($id);
         $comments = Comment::where('post_id', $id)->get();
         $users = User::all();
+        $users_role = User::with('roles')->get();
+        $categories = Category::where('id', $post->category_id)->get();
 
         return Inertia::render('Forum/PostPattern', [
             'post' => $post,
             'comments' => $comments,
-            'users' => $users
+            'users' => $users,
+            'categories' => $categories,
+            'users_role' => $users_role
         ]);
     }
 
