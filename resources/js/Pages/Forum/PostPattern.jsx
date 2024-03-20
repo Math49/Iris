@@ -10,6 +10,7 @@ import { Instagram } from 'lucide-react';
 import Modal from '@/Components/Modal';
 import PrimaryButton from '@/Components/PrimaryButton';
 import Footer from '@/Layouts/Footer';
+import { Star } from 'lucide-react';
 
 
 export default function Forum({ post, comments, users, categories, auth, users_role }) {
@@ -101,11 +102,11 @@ export default function Forum({ post, comments, users, categories, auth, users_r
                                 </div>
                             </div>
                             <div className='mt-12 p-3 border-[1px] border-bleu rounded-md flex items-center gap-x-4'>
-                                {(users_role && users_role.find(user => user.id === post.user_id).roles[0].name) === "user" ? 
+                                {users_role && users_role.find(user => user.id === post.user_id).roles[0].name === "user" ? 
                                     <div className='rounded-full w-12 h-12 bg-bleu'></div>
                                 : 
                                     <div className='rounded-full w-12 h-12 bg-bleu relative'>
-                                        <div className='rounded-full w-6 h-6 bg-yellow-500 absolute right-0 top-0'></div>
+                                        <Star strokeWidth={3} className='text-yellow absolute -right-1 top-0' />
                                     </div>
                                  }
                                 <p className='font-semibold'>{users && users.find(user => user.id === post.user_id).name}</p>
@@ -130,11 +131,12 @@ export default function Forum({ post, comments, users, categories, auth, users_r
                                     {comments && comments.filter(comment => comment.post_id === post.id).sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).map(comment => (
                                         <div key={comment.id} className='border-[1px] border-bleu rounded-md p-3 mb-4'>
                                             <div className='flex items-center gap-x-3 border-b-[1px] border-bleu pb-3'>
-                                                {(users_role && users_role.find(user => user.id === post.user_id).roles[0].name) === "user" ? 
+                                                {users_role && users_role.find(user => user.id === post.user_id).roles[0].name === "user" ?
+                                                
                                                     <div className='rounded-full w-12 h-12 bg-bleu'></div>
                                                 : 
                                                     <div className='rounded-full w-12 h-12 bg-bleu relative'>
-                                                        <div className='rounded-full w-6 h-6 bg-yellow-500 absolute right-0 top-0'></div>
+                                                        <Star strokeWidth={3} className='text-yellow absolute -right-1 top-0' />
                                                     </div>
                                                 }
                                                 <div className=''>

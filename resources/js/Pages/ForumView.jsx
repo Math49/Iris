@@ -7,6 +7,7 @@ import { MessageSquare, Plus, Search, Bookmark } from 'lucide-react';
 import Modal from '@/Components/Modal';
 import PrimaryButton from '@/Components/PrimaryButton';
 import Footer from '@/Layouts/Footer';
+import {Star} from 'lucide-react';
 
 export default function Forum({ auth, categories, posts, comments, users, users_role }) {
 
@@ -112,11 +113,11 @@ export default function Forum({ auth, categories, posts, comments, users, users_
                             <Link href={route('forum.showPost', post.id)} key={post.id}>
                                 <div className='border-white border-[1px] rounded-md shadow-md h-[25vh] mb-4 flex gap-x-7 py-4 px-6'>
                                     <div>
-                                    {(users_role && users_role.find(user => user.id === post.user_id).roles[0].name) === "user" ? 
+                                    {users_role && users_role.find(user => user.id === post.user_id).roles[0].name === "user" ? 
                                         <div className='rounded-full w-12 h-12 bg-bleu'></div>
                                     : 
                                         <div className='rounded-full w-12 h-12 bg-bleu relative'>
-                                            <div className='rounded-full w-6 h-6 bg-yellow-500 absolute right-0 top-0'></div>
+                                            <Star strokeWidth={3} className='text-yellow absolute -right-1 top-0' />
                                         </div>
                                     }
                                     </div>
