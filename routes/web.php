@@ -19,6 +19,14 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/contact', function () {
+    return Inertia::render('Contact');
+})->name('contact');
+
+Route::get('/newsletter', function () {
+    return Inertia::render('Newsletter');
+})->name('newsletter');
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard/users', [ProfileController::class, 'index'])->name('users.index');

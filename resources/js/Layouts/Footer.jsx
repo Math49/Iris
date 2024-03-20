@@ -24,13 +24,13 @@ export default function Header({ }) {
                 </div>
                 <div className='w-[11vw]'>
                     <p className='text-bleu mb-4'>A propos</p>
-                    <Link href={route("forum.index")}><p className='text-sm mb-2'>Devenir bénévole</p></Link>
-                    <Link href=''><p className='text-sm mb-2'>Contact</p></Link>
+                    <Link href=''><p className='text-sm mb-2'>Devenir bénévole</p></Link>
+                    <Link href={route("contact")}><p className='text-sm mb-2'>Contact</p></Link>
                     <Link href=''><p className='text-sm'>Blog</p></Link>
                 </div>
                 <div className='w-[11vw]'>
                     <p className='text-bleu mb-4'>En savoir plus</p>
-                    <Link href={route("forum.index")}><p className='text-sm mb-2'>Newsletter</p></Link>
+                    <Link href={route("newsletter")}><p className='text-sm mb-2'>Newsletter</p></Link>
                     <Link href=''><p className='text-sm mb-2'>Mentions légales</p></Link>
                     <Link href=''><p className='text-sm'>Gestion des cookies</p></Link>
                 </div>
