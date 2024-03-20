@@ -54,9 +54,38 @@ class BlogController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'media_type' => $request->media_type,
-            'media' => "storage/".$path, // Utilisez le chemin d'accès du fichier
+            'media' => asset("storage/".$path), // Utilisez le chemin d'accès du fichier
         ]);
         
         return redirect()->route('blog.index');
+    }
+
+    public function show($id)
+    {
+        $blog = Blog::find($id);
+        $users = User::all();
+
+        return Inertia::render('Blog/ArticlePattern', [
+            'blog' => $blog,
+            'users' => $users
+        ]);
+    }
+
+    public function dashboard()
+    {
+        $blogs = Blog::all();
+        $users = User::all();
+
+        return Inertia::render('Blog/GestionBlog', [
+            'blogs' => $blogs,
+            'users' => $users
+        ]);
+    }
+
+    public function destroy($id)
+    {
+        Blog::destroy($id);
+
+        return redirect()->back();
     }
 }
