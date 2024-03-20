@@ -6,7 +6,7 @@ import { MapPin } from 'lucide-react';
 import { Send } from 'lucide-react';
 import PrimaryButton from '@/Components/PrimaryButton';
 
-export default function Welcome({ auth }) {
+export default function Contact({ auth }) {
     return (
         <>
             <Header auth={auth} />

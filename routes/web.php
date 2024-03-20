@@ -27,6 +27,10 @@ Route::get('/newsletter', function () {
     return Inertia::render('Newsletter');
 })->name('newsletter');
 
+Route::get('/devenir-benevole', function () {
+    return Inertia::render('Benevole');
+})->name('benevole');
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard/users', [ProfileController::class, 'index'])->name('users.index');

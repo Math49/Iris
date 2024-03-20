@@ -24,7 +24,7 @@ export default function Header({ }) {
                 </div>
                 <div className='w-[11vw]'>
                     <p className='text-bleu mb-4'>A propos</p>
-                    <Link href=''><p className='text-sm mb-2'>Devenir bénévole</p></Link>
+                    <Link href={route("benevole")}><p className='text-sm mb-2'>Devenir bénévole</p></Link>
                     <Link href={route("contact")}><p className='text-sm mb-2'>Contact</p></Link>
                     <Link href=''><p className='text-sm'>Blog</p></Link>
                 </div>

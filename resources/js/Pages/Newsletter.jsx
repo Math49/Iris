@@ -1,12 +1,9 @@
 import Header from '@/Layouts/Header';
 import Footer from '@/Layouts/Footer';
-import { Mail } from 'lucide-react';
-import { Phone } from 'lucide-react';
-import { MapPin } from 'lucide-react';
 import { Send } from 'lucide-react';
 import PrimaryButton from '@/Components/PrimaryButton';
 
-export default function Welcome({ auth }) {
+export default function Newsletter({ auth }) {
     return (
         <>
             <Header auth={auth} />
