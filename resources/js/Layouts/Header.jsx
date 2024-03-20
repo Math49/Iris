@@ -67,7 +67,7 @@ export default function Header({ auth }) {
                         <Link href={route("forum.index")} className="text-noir">Forum</Link>
                     </li>
                     <li>
-                        <Link href="" className="text-noir">Blog</Link>
+                        <Link href={route("blog.index")} className="text-noir">Blog</Link>
                     </li>
                 </ul>
                 <div>
