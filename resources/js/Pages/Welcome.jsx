@@ -1,6 +1,7 @@
 import Header from '@/Layouts/Header';
 import image from '../../img/gem0701938-jpg-29468.jpg';
 import {Link} from '@inertiajs/react';
+import Footer from '@/Layouts/Footer';
 
 export default function Welcome({ auth }) {
     return (
@@ -56,7 +57,7 @@ export default function Welcome({ auth }) {
                     </div>
                 </div>
             </div>
-            <div className='bg-gradient-to-bl from-gradient1 to-gradient2 h-[90vh] mt-28 mb-28 flex justify-center items-center gap-x-3'>
+            <div className='bg-gradient-to-bl from-gradient1 to-gradient2 h-[90vh] mt-28 flex justify-center items-center gap-x-3'>
                 <div className="h-[75vh] w-[30vw] rounded-lg border-white border-[0.5px] px-6 py-14 bg-gradient-to-bl from-white/5 to-white/20">
                     <h2 className='uppercase text-4xl font-semibold text-noir mb-6'>Nos dernières actions auprès de vous</h2>
                     <p className='text-noir mb-8'>La sensibilisation et l'éducation sont des éléments essentiels dans la lutte contre le cyberharcèlement. Nous nous engageons à fournir des ressources complètes pour aider nos utilisateurs à prévenir et signaler le cyberharcèlement. Notre équipe dédiée travaille en étroite collaboration avec des experts pour développer du contenu engageant.</p>
@@ -79,6 +80,7 @@ export default function Welcome({ auth }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

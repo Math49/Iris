@@ -6,6 +6,7 @@ import Header from '@/Layouts/Header';
 import { MessageSquare, Plus, Search, Bookmark } from 'lucide-react';
 import Modal from '@/Components/Modal';
 import PrimaryButton from '@/Components/PrimaryButton';
+import Footer from '@/Layouts/Footer';
 
 export default function Forum({ auth, categories, posts, comments, users, users_role }) {
 
@@ -222,15 +223,7 @@ export default function Forum({ auth, categories, posts, comments, users, users_
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-                <div className='p-6 '>
-                    
-                </div>
+            <Footer />
         </>
     )
 }
