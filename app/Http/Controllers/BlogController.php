@@ -12,10 +12,14 @@ class BlogController extends Controller
     public function index()
     {   
 
-        $blog = Blog::all();
+        $blogs = Blog::all();
         $users = User::all();
+
     
-        return Inertia::render('Blog/BlogView', $blog, $users);
+        return Inertia::render('Blog/BlogView', [
+            'blogs' => $blogs,
+            'users' => $users
+        ]);
     }
 
     public function addBlog()
@@ -25,21 +29,34 @@ class BlogController extends Controller
 
     public function create(Request $request)
     {
+
+        
+
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'media' => 'required',
-            'media_type' => 'required',
+            'media_type' => 'required|in:image,video',
+            'media' => 'required|file|mimes:jpeg,jpg,png,gif,mp4,mov,avi,flv,wmv',
         ]);
-
+    
+        // Récupérez le fichier de l'input 'media'
+        $file = $request->file('media');
+        
+        // Générez un nom de fichier unique
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
+    
+        // Stockez le fichier dans le dossier 'public/media' et récupérez le chemin d'accès
+        $path = $file->storeAs('media', $fileName, 'public');
+    
+        // Créez un nouveau blog avec le chemin d'accès du fichier
         Blog::create([
+            'user_id' => auth()->user()->id,
             'title' => $request->title,
             'content' => $request->content,
-            'media' => $request->media,
             'media_type' => $request->media_type,
-            'user_id' => auth()->user()->id,
+            'media' => "storage/".$path, // Utilisez le chemin d'accès du fichier
         ]);
-
+        
         return redirect()->route('blog.index');
     }
 }

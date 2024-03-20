@@ -10,7 +10,7 @@ export default function Header({ auth }) {
         <>
             <Bandeau />
             <nav className="flex px-20 justify-between py-3 items-center border-b-[1px] border-bleu">
-                <Link href="" className="text-black">
+                <Link href={route("welcome")} className="text-black">
                     <img src={logo} alt="Logo Iris" className='w-12' />
                 </Link>
                 <ul className="flex items-center gap-x-8">
