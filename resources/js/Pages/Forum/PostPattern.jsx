@@ -9,6 +9,7 @@ import { Facebook } from 'lucide-react';
 import { Instagram } from 'lucide-react';
 import Modal from '@/Components/Modal';
 import PrimaryButton from '@/Components/PrimaryButton';
+import Footer from '@/Layouts/Footer';
 
 
 export default function Forum({ post, comments, users, categories, auth, users_role }) {
@@ -171,6 +172,7 @@ export default function Forum({ post, comments, users, categories, auth, users_r
                     )}
                 </div>  
             </div>
+            <Footer />
         </>
     )
 }
