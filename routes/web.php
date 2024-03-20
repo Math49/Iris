@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -13,7 +14,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -28,9 +29,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/forum/{id}', [ForumController::class, 'showPost'])->name('forum.showPost');
     Route::post('/comment/{id}', [ForumController::class, 'comment'])->name('forum.comment');
     Route::post('/forum/create', [ForumController::class, 'create'])->name('forum.createPost');
-
+    
     Route::get('/posts', [ForumController::class, 'posts'])->name('posts.index');
     Route::delete('/posts/{id}', [ForumController::class, 'destroyPost'])->name('posts.destroy');
+    
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('/blog/create', [BlogController::class, 'addBlog'])->name('blog.add');
+    Route::post('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+    Route::get('/dashboard/blog', [BlogController::class, 'dashboard'])->name('blog.dashboard');
+    Route::delete('/dashboard/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

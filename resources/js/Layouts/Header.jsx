@@ -10,7 +10,7 @@ export default function Header({ auth }) {
         <>
             <Bandeau />
             <nav className="flex px-20 justify-between py-3 items-center border-b-[1px] border-bleu">
-                <Link href="/" className="text-black">
+                <Link href={route("welcome")} className="text-black">
                     <img src={logo} alt="Logo Iris" className='w-12' />
                 </Link>
                 <ul className="flex items-center gap-x-8">
@@ -67,7 +67,7 @@ export default function Header({ auth }) {
                         <Link href={route("forum.index")} className="text-noir">Forum</Link>
                     </li>
                     <li>
-                        <Link href="" className="text-noir">Blog</Link>
+                        <Link href={route("blog.index")} className="text-noir">Blog</Link>
                     </li>
                 </ul>
                 <div>
