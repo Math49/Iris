@@ -10,14 +10,14 @@ export default function Header({ auth }) {
         <>
             <Bandeau />
             <nav className="flex px-20 justify-between py-3 items-center border-b-[1px] border-bleu">
-                <Link href="/" className="text-black">
+                <Link href={route("welcome")} className="text-black">
                     <img src={logo} alt="Logo Iris" className='w-12' />
                 </Link>
                 <ul className="flex items-center gap-x-8">
                     <li>
                         <Dropdown>
                             <Dropdown.Trigger>
-                                <span className="inline-flex rounded-md">
+                                <span className="inline-flex w-full p-3 py-2 leading-5 text-noir border-b-4 border-transparent hover:border-b-4 hover:border-bleu focus:outline-none transition duration-150 ease-in-out">
                                     <button
                                         type="button"
                                         className="text-noir flex items-center gap-x-1"
@@ -43,7 +43,7 @@ export default function Header({ auth }) {
                     <li>
                         <Dropdown>
                             <Dropdown.Trigger>
-                                <span className="inline-flex rounded-md">
+                                <span className="inline-flex w-full p-3 py-2 leading-5 text-noir border-b-4 border-transparent hover:border-b-4 hover:border-bleu focus:outline-none transition duration-150 ease-in-out">
                                     <button
                                         type="button"
                                         className="text-noir flex items-center gap-x-1"
@@ -61,21 +61,21 @@ export default function Header({ auth }) {
                         </Dropdown>
                     </li>
                     <li>
-                        <Link href="" className="text-noir">Nos actions</Link>
+                        <Link href="" className="block w-full p-3 py-2 leading-5 text-noir border-b-4 border-transparent hover:border-b-4 hover:border-bleu focus:outline-none transition duration-150 ease-in-out ">Nos actions</Link>
                     </li>
                     <li>
-                        <Link href={route("forum.index")} className="text-noir">Forum</Link>
+                        <Link href={route("forum.index")} className="block w-full p-3 py-2 leading-5 text-noir border-b-4 border-transparent hover:border-b-4 hover:border-bleu focus:outline-none transition duration-150 ease-in-out">Forum</Link>
                     </li>
                     <li>
-                        <Link href="" className="text-noir">Blog</Link>
+                        <Link href={route("blog.index")} className="block w-full p-3 py-2 leading-5 text-noir border-b-4 border-transparent hover:border-b-4 hover:border-bleu focus:outline-none transition duration-150 ease-in-out">Blog</Link>
                     </li>
                 </ul>
                 <div>
-                    <div className='bg-bleu text-white py-1 px-6 rounded-lg'>
+                    <div className='bg-bleu text-white py-1 px-6 rounded-lg hover:bg-bleu_fonce'>
                         {auth.user.id ? (
                             <Dropdown>
-                                <Dropdown.Trigger>
-                                    <span className="inline-flex rounded-md">
+                                <Dropdown.Trigger className="">
+                                    <span className="inline-flex rounded-md ">
                                         <button
                                             type="button"
                                             className="flex items-center justify-between gap-x-3"

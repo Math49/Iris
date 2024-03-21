@@ -18,9 +18,9 @@ export default function Header({ }) {
                 </div>
                 <div className='w-[11vw]'>
                     <p className='text-bleu mb-4'>Explorer</p>
-                    <Link href={route("forum.index")}><p className='text-sm mb-2'>Forum</p></Link>
-                    <Link href=''><p className='text-sm mb-2'>Les actualités</p></Link>
-                    <Link href=''><p className='text-sm'>Nos actions</p></Link>
+                    <Link href={route("forum.index")}><p className='text-sm mb-2 hover:font-bold'>Forum</p></Link>
+                    <Link href=''><p className='text-sm mb-2 hover:font-bold'>Les actualités</p></Link>
+                    <Link href=''><p className='text-sm hover:font-bold'>Nos actions</p></Link>
                 </div>
                 <div className='w-[11vw]'>
                     <p className='text-bleu mb-4'>A propos</p>
@@ -52,13 +52,13 @@ export default function Header({ }) {
                         </PrimaryButton>
                     </div>
                     <div className='flex gap-x-2'>
-                        <Link href='' className='w-12 h-12 rounded-md bg-noir relative cursor-pointer'>
+                        <Link href='' className='w-12 h-12 rounded-md bg-noir relative cursor-pointer hover:bg-amber-400'>
                             <Instagram size={32} className='text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
                         </Link>
-                        <Link href='' className='w-12 h-12 rounded-md bg-noir relative cursor-pointer'>
+                        <Link href='' className='w-12 h-12 rounded-md bg-noir relative cursor-pointer hover:bg-amber-400'>
                             <Facebook size={32} className='text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
                         </Link>
-                        <Link href='' className='w-12 h-12 rounded-md bg-noir relative cursor-pointer'>
+                        <Link href='' className='w-12 h-12 rounded-md bg-noir relative cursor-pointer hover:bg-amber-400'>
                             <Linkedin size={32} className='text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
                         </Link>
                     </div>
