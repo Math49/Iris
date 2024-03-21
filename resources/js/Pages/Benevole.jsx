@@ -2,9 +2,11 @@ import Header from '@/Layouts/Header';
 import Footer from '@/Layouts/Footer';
 import { Send } from 'lucide-react';
 import PrimaryButton from '@/Components/PrimaryButton';
-import image from '../../img/gem0701938-jpg-29468.jpg';
+import image from '../../img/MicrosoftTeams-image.png';
 import React from "react";
 import MultipleItems from '@/Components/MultipleItems';
+import affiche from '../../img/MicrosoftTeams-image (2).png';
+import conference from '../../img/pexels-katerina-holmes-5905440.jpg';
 
 export default function Benevole({ auth }) {
     const settings = {
@@ -17,14 +19,14 @@ export default function Benevole({ auth }) {
     return (
         <>
             <Header auth={auth} />
-            <div className='pl-32 pr-12 flex justify-between'>
+            <div className='pl-24 pr-12 flex justify-between'>
                 <div className='w-[45vw] h-[86vh] flex flex-col items-center justify-center'>
                     <h1 className='text-noir uppercase text-6xl leading-[75px]'>devenir bénévole : <span className='text-bleu'>s'engager</span> auprès <br /> des victimes</h1>
                     <p className='mt-5'>Agir pour le bien commun c'est permettre aux 15 bénévoles d'apporter un soutien à des personnes cyberharcelés !</p>
                 </div>                           
-                <div className='flex justify-center items-center w-[40vw]'>
-                    <img className="w-[30vw] h-[27vw] object-cover rounded-lg relative z-10" src={image} alt="" />
-                    <div className='bg-bleu_fonce w-[30vw] h-[27vw] absolute rounded-lg z-1 ml-8 mt-8'></div>
+                <div className='flex justify-center items-center w-[45vw]'>
+                    <img className="w-[41vw] h-[27vw] object-cover rounded-lg relative z-10" src={image} alt="" />
+                    <div className='bg-bleu_fonce w-[41vw] h-[27vw] absolute rounded-lg z-1 ml-8 mt-8'></div>
                 </div>
             </div>
 
@@ -35,15 +37,13 @@ export default function Benevole({ auth }) {
 
             <div>
                 <div className='flex'>
-                    <div className='w-[50%] bg-bleu h-[50vh]'>
-
-                    </div>
+                    <img className='w-[50%] bg-bleu h-[50vh] object-cover' src={conference} />
                     <div className='w-[50%] py-10 px-16 flex justify-between flex-col'>
                         <div>
                             <p className='uppercase text-yellow font-bold text-sm'>POURQUOI</p>
                             <h3 className='uppercase font-semibold text-4xl'>apporter du soutien</h3>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porttitor facilisis augue. Nullam egestas, purus at viverra feugiat, augue ante cursus est, et suscipit augue ligula pharetra ligula. Proin elementum ornare ex, quis sollicitudin neque mattis in. Mauris ac ipsum nec lacus varius dignissim quis id mi. Ut tempus urna ac turpis pretium, eu mollis eros pulvinar. Nulla fringilla eros tellus, ut maximus ligula ultrices vel. Donec quis velit tempus, imperdiet tortor in, hendrerit nisi. Nulla facilisi.</p>
+                        <p>En tant que bénévole, apporter du soutien aux victimes de cyber-harcèlement est crucial pour offrir un espace sûr où elles peuvent s'exprimer librement, recevoir de l'empathie et obtenir les ressources nécessaires à leur rétablissement. Leur offrir un soutien inconditionnel peut contribuer à restaurer leur confiance en elles-mêmes et à les aider à surmonter les effets néfastes du harcèlement en ligne. En outre, en étant présent pour ces victimes, nous pouvons leur montrer qu'elles ne sont pas seules dans cette épreuve et les aider à reprendre le contrôle de leur vie.</p>
                         <div>
                             <PrimaryButton>
                                 Je m'engage
@@ -57,16 +57,14 @@ export default function Benevole({ auth }) {
                             <p className='uppercase text-yellow font-bold text-sm'>comment</p>
                             <h3 className='uppercase font-semibold text-4xl'>Des missions impactantes</h3>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porttitor facilisis augue. Nullam egestas, purus at viverra feugiat, augue ante cursus est, et suscipit augue ligula pharetra ligula. Proin elementum ornare ex, quis sollicitudin neque mattis in. Mauris ac ipsum nec lacus varius dignissim quis id mi. Ut tempus urna ac turpis pretium, eu mollis eros pulvinar. Nulla fringilla eros tellus, ut maximus ligula ultrices vel. Donec quis velit tempus, imperdiet tortor in, hendrerit nisi. Nulla facilisi.</p>
+                        <p>Les missions de bénévolat auprès des victimes de cyber-harcèlement peuvent avoir un impact significatif en offrant un soutien émotionnel, en aidant à renforcer la résilience des victimes, en contribuant à la sensibilisation et à la prévention du harcèlement en ligne, et en apportant un réconfort précieux à ceux qui en ont besoin. En écoutant activement, en fournissant des ressources utiles et en étant une présence empathique, les bénévoles peuvent jouer un rôle crucial dans la vie des victimes, les aidant à se rétablir et à retrouver un sentiment de sécurité et de bien-être.</p>
                         <div>
                             <PrimaryButton>
                                 Je soutiens
                             </PrimaryButton>
                         </div>
                     </div>             
-                    <div className='w-[50%] bg-bleu h-[50vh]'>
-
-                    </div>
+                    <img className='w-[50%] bg-bleu h-[50vh] object-cover' src={affiche} />
                 </div>
             </div>
 
