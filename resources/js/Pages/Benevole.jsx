@@ -18,7 +18,7 @@ export default function Benevole({ auth }) {
         <>
             <Header auth={auth} />
             <div className='pl-32 pr-12 flex justify-between'>
-                <div className='w-[40vw] h-[86vh] flex flex-col items-center justify-center'>
+                <div className='w-[45vw] h-[86vh] flex flex-col items-center justify-center'>
                     <h1 className='text-noir uppercase text-6xl leading-[75px]'>devenir bénévole : <span className='text-bleu'>s'engager</span> auprès <br /> des victimes</h1>
                     <p className='mt-5'>Agir pour le bien commun c'est permettre aux 15 bénévoles d'apporter un soutien à des personnes cyberharcelés !</p>
                 </div>                           

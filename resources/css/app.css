@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Quicksand:wght@300..700&display=swap');
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Cabin Condensed', sans-serif;
+}
+
+body, html{
     background-color: #F2F4FF;
     color: #2C2828;
+    font-family: 'Quicksand', sans-serif !important;
 }
 
 ul.slick-dots li button::before, .slick-dots li button::after{
