@@ -81,4 +81,13 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+
+    public function destroyUser(Request $request, $id){
+        $user = User::find($id);
+        
+        $user->delete();
+
+        return redirect()->back();
+    }
 }

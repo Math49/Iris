@@ -23,8 +23,8 @@ Route::get('/donnation', function () {
     return Inertia::render('Donnation');
 })->name('donnation');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+Route::get('/admin/dashboard', function () {
+    return Inertia::render('Admin/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/contact', function () {
@@ -45,16 +45,17 @@ Route::get('/profil', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard/users', [ProfileController::class, 'index'])->name('users.index');
-    Route::post('/dashboard/users/{user}/role', [ProfileController::class, 'updateRole'])->name('users.updateRole');
+    Route::get('/admin/dashboard/users', [ProfileController::class, 'index'])->name('users.index');
+    Route::post('/admin/dashboard/users/{user}/role', [ProfileController::class, 'updateRole'])->name('users.updateRole');
+    Route::delete('/admin/dashboard/users/{id}', [ProfileController::class, 'destroyUser'])->name('user.destroy');
 
     Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
     Route::get('/forum/{id}', [ForumController::class, 'showPost'])->name('forum.showPost');
     Route::post('/comment/{id}', [ForumController::class, 'comment'])->name('forum.comment');
     Route::post('/forum/create', [ForumController::class, 'create'])->name('forum.createPost');
     
-    Route::get('/posts', [ForumController::class, 'posts'])->name('posts.index');
-    Route::delete('/posts/{id}', [ForumController::class, 'destroyPost'])->name('posts.destroy');
+    Route::get('/admin/dashboard/posts', [ForumController::class, 'posts'])->name('posts.index');
+    Route::delete('/admin/dashboard/posts/{id}', [ForumController::class, 'destroyPost'])->name('posts.destroy');
     
     Route::get('/blog/create', [BlogController::class, 'addBlog'])->name('blog.add');
     Route::post('/blog/create', [BlogController::class, 'create'])->name('blog.create');

@@ -20,7 +20,7 @@ export default function Forum({ auth, categories, posts, comments, users }) {
                 user={auth.user}
                 header={
                     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                        Forum
+                        Gestion du forum
                     </h2>
                 }
             >
@@ -35,12 +35,16 @@ export default function Forum({ auth, categories, posts, comments, users }) {
                                         <div className='' key={category.id}>
                                             <h2 className='font-bold mb-4 '>{category.title}</h2>
                                             {posts && posts.filter(post => post.category_id === category.id).map(post => (
-                                                <div className='flex p-4 gap-4 shadow mb-4 sm:rounded-lg' key={post.id}>
-                                                    <h3>{post.title}</h3>
-                                                    <p>{users && users.find(user => user.id === post.user_id).name}</p>
-                                                    <p>{new Date(post.created_at).toLocaleDateString('fr-FR')}</p>
-                                                    <p>{comments && comments.filter(comment => comment.post_id === post.id).length} commentaires</p>
-                                                    <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
+                                                <div className='flex p-4 gap-4 shadow mb-4 sm:rounded-lg justify-between items-center' key={post.id}>
+                                                    <div className='flex gap-6 '>
+                                                        <h3>{post.title}</h3>
+                                                        <p>{users && users.find(user => user.id === post.user_id).name}</p>
+                                                        <p>{new Date(post.created_at).toLocaleDateString('fr-FR')}</p>
+                                                        <p>{comments && comments.filter(comment => comment.post_id === post.id).length} commentaires</p>
+                                                    </div>
+                                                    <div className='mr-6 '>
+                                                        <button onClick={() => handleDeletePost(post.id)} className=' text-red-600 rounded-lg p-2 transition ease-in-out delay-5000 hover:bg-red-500 hover:text-white duration-300'>Delete Post</button>
+                                                    </div>    
                                                 </div>
                                             ))}
                                             <br/><hr/><br/>
