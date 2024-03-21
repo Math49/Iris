@@ -1,5 +1,5 @@
 import Header from '@/Layouts/Header';
-import image from '../../img/gem0701938-jpg-29468.jpg';
+import image from '../../img/MicrosoftTeams-image (1).png';
 import {Link} from '@inertiajs/react';
 import Footer from '@/Layouts/Footer';
 

@@ -22,6 +22,14 @@ class BlogController extends Controller
         ]);
     }
 
+    public function donnationBlog()
+    {
+        $blogs = Blog::all();
+        return Inertia::render('Donnation', [
+            'blogs' => $blogs
+        ]);
+    }
+
     public function addBlog()
     {
         return Inertia::render('Blog/BlogAdd');

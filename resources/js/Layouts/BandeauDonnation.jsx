@@ -17,13 +17,13 @@ export default function Bandeau() {
     const animation = () => {
       Firstwrapper.style.transform = `translateX(${FirstwrapperWidth}px)`;
       Secondwrapper.style.transform = `translateX(${SecondwrapperWidth}px)`;
-      Firstwrapper.style.transition = 'transform 40s linear';
+      Firstwrapper.style.transition = 'transform 60s linear';
       Secondwrapper.style.transition = 'transform 40s linear';
 
       setTimeout(() => {
         Firstwrapper.style.transform = `translateX(-${FirsttextWidth}px)`;
         Secondwrapper.style.transform = `translateX(-${SecondtextWidth}px)`;
-        Firstwrapper.style.transition = 'transform 40s linear';
+        Firstwrapper.style.transition = 'transform 60s linear';
         Secondwrapper.style.transition = 'transform 40s linear';
       }, 10);
     };
@@ -35,7 +35,7 @@ export default function Bandeau() {
       Secondwrapper.style.transform = `translateX(${SecondwrapperWidth}px)`;
 
       setTimeout(() => {
-        Firstwrapper.style.transition = 'transform 40s linear';
+        Firstwrapper.style.transition = 'transform 60s linear';
         Secondwrapper.style.transition = 'transform 40s linear';
         Firstwrapper.style.transform = `translateX(-${FirsttextWidth}px)`;
         Secondwrapper.style.transform = `translateX(-${SecondtextWidth}px)`;

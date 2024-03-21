@@ -26,6 +26,7 @@ export default {
                 vert_category: '#58D4A0',
                 orange_category: '#FFA700',
                 yellow: '#F7A915',
+                yellow2: '#FFD700'
             },
         },
     },
