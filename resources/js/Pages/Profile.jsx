@@ -2,7 +2,6 @@ import Header from '@/Layouts/Header';
 import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm';
 import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm';
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm';
-import Header from '@/Layouts/Header';
 
 export default function Profile({ auth, mustVerifyEmail, status}) {
     return (

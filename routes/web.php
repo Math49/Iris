@@ -31,6 +31,10 @@ Route::get('/devenir-benevole', function () {
     return Inertia::render('Benevole');
 })->name('benevole');
 
+Route::get('/profil', function () {
+    return Inertia::render('Profile');
+})->name('profile');
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard/users', [ProfileController::class, 'index'])->name('users.index');
