@@ -36,9 +36,9 @@ Route::get('/devenir-benevole', function () {
     return Inertia::render('Benevole');
 })->name('benevole');
 
-Route::get('/profil', function () {
-    return Inertia::render('Profile');
-})->name('profile');
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 Route::middleware('auth')->group(function () {
 
@@ -57,11 +57,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/blog/create', [BlogController::class, 'create'])->name('blog.create');
     Route::get('/dashboard/blog', [BlogController::class, 'dashboard'])->name('blog.dashboard');
     Route::delete('/dashboard/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
-
-
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';
