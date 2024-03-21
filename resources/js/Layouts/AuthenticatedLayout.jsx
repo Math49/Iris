@@ -21,9 +21,6 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('blog')}>
                                     Gestion du blog
                                 </NavLink>
-                                <NavLink href={route('dashboard')} active={route().current('témoignages')}>
-                                    Gestion des témoignages
-                                </NavLink>
                                 <NavLink href={route('users.index')} active={route().current('users.index')}>
                                     Gestion des utilisateurs
                                 </NavLink>

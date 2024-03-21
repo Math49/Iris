@@ -3,6 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Link, Head } from "@inertiajs/react";
 import axios from 'axios';
 import { Inertia } from '@inertiajs/inertia';
+import Header from '@/Layouts/Header';
 
 
 export default function Forum({ auth, post, comments, users }) {
@@ -25,14 +26,7 @@ export default function Forum({ auth, post, comments, users }) {
 
     return (
         <div>
-            <AuthenticatedLayout
-                user={auth.user}
-                header={
-                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                        Forum
-                    </h2>
-                }
-            >
+            <Header auth={auth} />
                 <Head title="Forum" />
 
                 <div className="py-12">
@@ -74,7 +68,7 @@ export default function Forum({ auth, post, comments, users }) {
                         </div>
                     </div>
                 </div>
-            </AuthenticatedLayout>
+            
         </div>
     )
 }
