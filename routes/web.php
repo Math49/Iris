@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/dashboard/users', [ProfileController::class, 'index'])->name('users.index');
     Route::post('/admin/dashboard/users/{user}/role', [ProfileController::class, 'updateRole'])->name('users.updateRole');
+    Route::delete('/admin/dashboard/users/{id}', [ProfileController::class, 'destroyUser'])->name('user.destroy');
 
     Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
     Route::get('/forum/{id}', [ForumController::class, 'showPost'])->name('forum.showPost');
