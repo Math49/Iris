@@ -23,8 +23,6 @@ Route::get('/donnation', function () {
     return Inertia::render('Donnation');
 })->name('donnation');
 
-
-
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
@@ -43,19 +41,10 @@ Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.
 
 Route::middleware('auth')->group(function () {
 
-    
-
     Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
     Route::get('/forum/{id}', [ForumController::class, 'showPost'])->name('forum.showPost');
     Route::post('/comment/{id}', [ForumController::class, 'comment'])->name('forum.comment');
     Route::post('/forum/create', [ForumController::class, 'create'])->name('forum.createPost');
-    
-    
-
-
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
