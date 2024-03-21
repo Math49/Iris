@@ -86,7 +86,7 @@ export default function Header({ auth }) {
                                 </Dropdown.Trigger>
 
                                 <Dropdown.Content >
-                                    <Dropdown.Link href={route('profile')} className='py-4'>Information profil</Dropdown.Link>
+                                    <Dropdown.Link href={route('profile.edit')} className='py-4'>Information profil</Dropdown.Link>
                                     {
                                     auth.user.roles == 'admin' && (
                                         <>
