@@ -54,7 +54,7 @@ export default function Header({ auth }) {
                             </Dropdown.Trigger>
 
                             <Dropdown.Content >
-                                <Dropdown.Link href="" className='py-4'>Faire un don</Dropdown.Link>
+                                <Dropdown.Link href={route("donnation")} className='py-4'>Faire un don</Dropdown.Link>
                                 <p className='border-b-2 border-bleu_fonce'></p>
                                 <Dropdown.Link className='py-4' href={route("benevole")}>Devenir bénévole</Dropdown.Link>
                             </Dropdown.Content>

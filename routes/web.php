@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
 
+Route::get('/donnation', function () {
+    return Inertia::render('Donnation');
+})->name('donnation');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
