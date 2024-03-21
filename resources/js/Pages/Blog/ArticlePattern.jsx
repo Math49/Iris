@@ -4,7 +4,7 @@ import Footer from '@/Layouts/Footer';
 import { CircleChevronLeft } from 'lucide-react';
 import { Link} from "@inertiajs/react";
 
-export default function ArticlePattern({auth, blog, users}) {
+export default function ArticlePattern({auth, blog}) {
 
 
     return (
@@ -20,20 +20,24 @@ export default function ArticlePattern({auth, blog, users}) {
             <div key={blog.id}>
                 <h1 className='font-semibold uppercase text-4xl text-center mb-3'>{blog.title}</h1>
                 <p className='text-sm font-bold text-center'>publié le {new Date(blog.created_at).toLocaleDateString('fr-FR')}</p>
-                <div className='mt-6'>
+                <div className='mt-10'>
                     {blog.media ? (
                         blog.media_type === 'video' ? (
-                            <video controls>
-                                <source src={blog.media} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
+                            <div className='w-full h-full'>
+                                <video className='w-full h-full' controls>
+                                    <source src={blog.media} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         ) : (
-                            <img src={blog.media} alt={blog.title} />
+                            <div className='w-full h-[60vh]'>
+                                <img className='w-full h-[60vh] object-cover' src={blog.media} alt={blog.title} />
+                            </div>
                         )
                     ) :
                     null}
                 </div>
-                <p className='mt-14'>{blog.content}</p>
+                <p className='mt-10'>{blog.content}</p>
             </div>     
         </div>
         <Footer />
