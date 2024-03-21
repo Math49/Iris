@@ -29,8 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/comment/{id}', [ForumController::class, 'comment'])->name('forum.comment');
     Route::post('/forum/create', [ForumController::class, 'create'])->name('forum.createPost');
 
-    Route::get('/posts', [ForumController::class, 'posts'])->name('posts.index');
-    Route::delete('/posts/{id}', [ForumController::class, 'destroyPost'])->name('posts.destroy');
+    Route::get('/admin/dashboard/posts', [ForumController::class, 'posts'])->name('posts.index');
+    Route::delete('/admin/dashboard/posts/{id}', [ForumController::class, 'destroyPost'])->name('posts.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
