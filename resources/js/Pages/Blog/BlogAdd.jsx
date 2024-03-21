@@ -27,34 +27,37 @@ export default function BlogAdd({auth}) {
 
     return (
         <>
-        <Header auth={auth} />
+        <AuthenticatedLayout user={auth.user}>
+        <div className='flex flex-col items-center justify-center'>
 
-        <div className="container">
-                <form ref={formRef} onSubmit={handleSubmit}>
+        
+        <div className="container p-4 bg-white m-4 border-2 border-gray-300 sm:rounded-lg flex justify-between items-center flex-col">
+                <form ref={formRef} onSubmit={handleSubmit} className='flex flex-col gap-2'>
                     
-                    <label>
+                    <label className='flex flex-col'>
                         Title:
                         <input type="text" name="title" required />
                     </label>
-                    <label>
+                    <label className='flex flex-col'>
                         Content:
                         <textarea name="content" required></textarea>
                     </label>
-                    <label>
+                    <label className='flex flex-col'>
                         Media Type:
                         <select name="media_type" id="media_type">
                             <option value="image">Image</option>
                             <option value="video">Video</option>
                         </select>
                     </label>
-                    <label>
+                    <label className='flex flex-col'>
                         Media:
                         <input type="file" name="media" required accept='.jpg, .jpeg, .png, .mp4, .webm, .mov, .avi' />
                     </label>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className='mt-4 rounded-lg p-2 transition ease-in-out delay-5000 bg-blue-500 hover:text-blue-600 hover:bg-white border-blue-500 border-2 text-white duration-300'>Submit</button>
                 </form>
             </div>
-
+            </div>
+        </AuthenticatedLayout>
         </>
     )
 }

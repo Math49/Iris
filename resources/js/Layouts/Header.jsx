@@ -87,6 +87,13 @@ export default function Header({ auth }) {
 
                                 <Dropdown.Content >
                                     <Dropdown.Link href={route('profile')} className='py-4'>Information profil</Dropdown.Link>
+                                    {
+                                    auth.user.roles == 'admin' && (
+                                        <>
+                                            <p className='border-b-2 border-bleu_fonce'></p>
+                                            <Dropdown.Link href={route('dashboard')} className='py-4'>Dashboard</Dropdown.Link>
+                                        </>
+                                    )}
                                     <p className='border-b-2 border-bleu_fonce'></p>
                                     <Dropdown.Link href={route('logout')} method="post" as="button" className='py-4'>
                                         Se déconnecter

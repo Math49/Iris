@@ -39,22 +39,16 @@ class BlogController extends Controller
             'media' => 'required|file|mimes:jpeg,jpg,png,gif,mp4,mov,avi,flv,wmv',
         ]);
     
-        // Récupérez le fichier de l'input 'media'
         $file = $request->file('media');
-        
-        // Générez un nom de fichier unique
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
-    
-        // Stockez le fichier dans le dossier 'public/media' et récupérez le chemin d'accès
-        $path = $file->storeAs('media', $fileName, 'public');
-    
-        // Créez un nouveau blog avec le chemin d'accès du fichier
+        $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $path = $file->storeAs('media', $fileName, "public");
+
         Blog::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,
             'content' => $request->content,
             'media_type' => $request->media_type,
-            'media' => asset("storage/".$path), // Utilisez le chemin d'accès du fichier
+            'media' => asset("storage/".$path),
         ]);
         
         return redirect()->route('blog.index');

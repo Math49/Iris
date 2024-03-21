@@ -14,7 +14,7 @@ export default function BlogView({auth, blogs, users}) {
             <div className='mb-20'>
                 <h1 className='text-noir uppercase text-6xl leading-[70px]'>Les médias pour <br /> s'informer sur le cyberharcèlement</h1>                
                 <div className='mt-6'>
-                    <p>Dans de blog patatattatatattatattatattatattataa</p>
+                    <p>Dans de blog</p>
                 </div>
             </div>
 

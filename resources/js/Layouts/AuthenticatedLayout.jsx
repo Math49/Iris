@@ -12,16 +12,13 @@ export default function Authenticated({ user, header, children }) {
     return (
         <div className="min-h-screen ">
             <nav className="flex px-20 justify-between py-3 items-center border-b-[1px] border-bleu">
-                <Link href="" className="text-black">
+                <Link href={route("welcome")} className="text-black">
                     <img src={logo} alt="Logo Iris" className='w-12' />
                 </Link>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="hidden space-x-8 sm:-my-px sm:flex items-center">
-                                <Link href={route("welcome")} className="text-black h-min">
-                                    <img src={logo} alt="Logo Iris" className='w-12' />
-                                </Link>
                                 <NavLink href={route('posts.index')} active={route().current('posts.index')}>
                                     Gestion du forum
                                 </NavLink>
