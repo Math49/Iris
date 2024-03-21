@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link} from "@inertiajs/react";
-import { Link} from "@inertiajs/react";
 import axios from 'axios';
 import { Inertia } from '@inertiajs/inertia';
 import { CircleChevronLeft, Plus } from 'lucide-react';
@@ -31,44 +30,6 @@ export default function Forum({ post, comments, users, categories, auth, users_r
             }
         });
     };
-    const category_color = (category_id) => {
-        if (category_id === 1) {
-            return <div className='flex justify-center gap-x-5 items-center'>
-                <span className='w-[12vw] h-[2px] bg-rose_category'></span>
-                    <p>{categories && categories.find(category => category.id === post.category_id).title}</p>
-                <span className='w-[12vw] h-[2px] bg-rose_category'></span>
-            </div>;
-        } else if (category_id === 2) {
-            return <div className='flex justify-center gap-x-5 items-center'>
-                <span className='w-[12vw] h-[2px] bg-vert_category'></span>
-                    <p>{categories && categories.find(category => category.id === post.category_id).title}</p>
-                <span className='w-[12vw] h-[2px] bg-vert_category'></span>
-            </div>;
-        } else if (category_id === 3) {
-            return <div className='flex justify-center gap-x-5 items-center'>
-                <span className='w-[12vw] h-[2px] bg-orange_category'></span>
-                    <p>{categories && categories.find(category => category.id === post.category_id).title}</p>
-                <span className='w-[12vw] h-[2px] bg-orange_category'></span>
-            </div>;
-        }
-    }
-
-    const daysDiff = (date) => {
-        const today = new Date();
-        const postDate = new Date(date);
-        const time = today - postDate;
-        const diff = Math.floor(time / (1000 * 60 * 60 * 24));
-        return diff;
-    }
-
-    const [showModal, setShowModal] = useState(false);
-    const openCommentCreation = () => {
-        setShowModal(true);
-    }
-
-    const closeCommentCreation = () => {
-        setShowModal(false);
-    }
     const category_color = (category_id) => {
         if (category_id === 1) {
             return <div className='flex justify-center gap-x-5 items-center'>
@@ -147,7 +108,7 @@ export default function Forum({ post, comments, users, categories, auth, users_r
                                     <div className='rounded-full w-12 h-12 bg-bleu relative'>
                                         <Star strokeWidth={3} className='text-yellow absolute -right-1 top-0' />
                                     </div>
-                                 }
+                                }
                                 <p className='font-semibold'>{users && users.find(user => user.id === post.user_id).name}</p>
                                 <span className='w-2 h-2 rounded-full bg-noir'></span>
                                 {(users_role && users_role.find(user => user.id === post.user_id).roles[0].name) === "user" ?
@@ -181,21 +142,12 @@ export default function Forum({ post, comments, users, categories, auth, users_r
                                                 <div className=''>
                                                     <p className='font-semibold'>{users && users.find(user => user.id === comment.user_id).name}</p>
                                                     <p className='text-bleu text-[.7em]'>Il y a {daysDiff(comment.created_at)} jours</p>
-                                                }
-                                                <div className=''>
-                                                    <p className='font-semibold'>{users && users.find(user => user.id === comment.user_id).name}</p>
-                                                    <p className='text-bleu text-[.7em]'>Il y a {daysDiff(comment.created_at)} jours</p>
                                                 </div>
                                             </div>
                                             <div className='pt-3'>
                                                 <p>{comment.content}</p>
                                             </div>
-                                            </div>
-                                            <div className='pt-3'>
-                                                <p>{comment.content}</p>
-                                            </div>
                                         </div>
-                                    ))}
                                     ))}
                                 </div>
                             </div>
@@ -218,31 +170,7 @@ export default function Forum({ post, comments, users, categories, auth, users_r
                                     </form>
                                 </div>
                             </Modal>
-                            <Modal show={showModal} onClose={closeCommentCreation} maxWidth='add'>
-                                <div className='p-5'>
-                                    <h3 className='text-noir text-[1.6rem] font-semibold mb-5'>Rédiger un commentaire</h3>
-                                    <form method='POST' onSubmit={(e) => handleSubmit(e)} className='flex gap-4 flex-col'>
-                                        <div className='flex flex-col'>
-                                            <label htmlFor="content" className='text-noir'>Commentaire</label>
-                                            <textarea className='h-[15vw] resize-none rounded-md border-bleu focus:border-none' name="content" id="content" placeholder="Rédiger votre commentaire ici ..."></textarea>
-                                        </div>
-                                        <div className='flex justify-between'>
-                                            <div onClick={closeCommentCreation} className='bg-transparent border-bleu border-2 px-4 py-1 rounded-md cursor-pointer uppercase font-semibold text-xs flex items-center hover:bg-bleu/5 transition ease-in-out duration-150 text-bleu'>
-                                                Retour
-                                            </div>
-                                            <PrimaryButton type="submit">
-                                                Publier
-                                            </PrimaryButton>
-                                        </div>
-                                    </form>
-                                </div>
-                            </Modal>
                         </div>
-                    )}
-                </div>  
-            </div>
-            <Footer />
-        </>
                     )}
                 </div>  
             </div>
